@@ -1,24 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
-
+import HomePage from './components/HomePage/HomePage';
+import Copper from './components/Copper/Copper';
+import { Route,Routes } from 'react-router-dom';
+import Aluminum from './components/Aluminum/Aluminum';
+import Strips from './components/Strips/Strips';
+import Contact from './components/Contact/Contact';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Routes>
+        <Route path='/' element={<HomePage/>}/>
+        <Route path='/contact' element={<Contact/>} />
+        <Route path='/copper' element={<Copper/>}/>
+        <Route path='/aluminum' element={<Aluminum/>} />
+        <Route path='/strips' element={<Strips/>}/>
+      </Routes>
   );
 }
 
